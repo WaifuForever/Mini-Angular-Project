@@ -1,0 +1,21 @@
+<div>
+    <h3>Lista de Produtos</h3>
+</div>
+
+<table border="1px">
+    
+    <th> Nome </th>
+    <th> Preço </th>
+    <th> Descrição </th>
+    <th> Ações </th>
+    <tr *ngFor="let item of produtos;">
+        <td> {{item.nome}} </td>
+        <td> {{item.preco}}</td>
+        <td> {{item.desc}}</td>
+        <td>
+            <button mat-flat-button color="primary" routerLink="/produtos/detalhe/{{item.id}}" selected>Detalhe</button>
+            <button class="btn-excluir" mat-flat-button color="warn">Excluir</button>
+        </td>
+    </tr>
+
+</table>

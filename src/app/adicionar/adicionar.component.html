@@ -1,0 +1,18 @@
+<div>
+    <h3>Adicionar Novo Produto</h3>
+</div>
+<form class="example-container" [formGroup]="productForm">
+    <mat-form-field>
+        <input matInput name="nomeProduto" placeholder="Nome do Produto" formControlName="nome">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput name="descProduto" placeholder="Descrição do Produto"
+            formControlName="desc"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="precoProduto" placeholder="Preço do Produto" formControlName="preco">
+    </mat-form-field>
+
+    <button class="add-btn" type="submit" [disabled]="!productForm.valid" mat-raised-button color="primary"
+        (click)="addProduto(productForm.value)">Adicionar</button>
+</form>
