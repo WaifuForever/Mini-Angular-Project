@@ -37,7 +37,7 @@ export class ProdutoService {
     }
   }
 
-  excliur(id: number): void {
+  excluir(id: number): void {
     if (id) {
       const index = this.produtos.findIndex(p => p.id === id);
       if (index > -1) {

@@ -14,7 +14,8 @@
         <td> {{item.desc}}</td>
         <td>
             <button mat-flat-button color="primary" routerLink="/produtos/detalhe/{{item.id}}" selected>Detalhe</button>
-            <button class="btn-excluir" mat-flat-button color="warn">Excluir</button>
+            <button class="btn-excluir"(click)="delete(item.id)" mat-flat-button color="warn">Excluir</button>
+           
         </td>
     </tr>
 

@@ -17,4 +17,7 @@ export class ListarComponent implements OnInit {
     this.produtos = this.service.listarProdutos();
   }
 
+  delete(id): void{
+    this.service.excluir(id);
+  }
 }

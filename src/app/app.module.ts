@@ -17,6 +17,9 @@ import { AdicionarComponent } from './adicionar/adicionar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
+import { ProdutoService } from './services/produtos.service'
+import { Produto } from './models/produto';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,7 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
