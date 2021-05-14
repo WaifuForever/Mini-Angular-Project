@@ -20,13 +20,15 @@ import { MatInputModule } from '@angular/material/input';
 
 import { ProdutoService } from './services/produtos.service'
 import { Produto } from './models/produto';
+import { SalarioComponent } from './salario/salario.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ListarComponent,
     DetalheComponent,
-    AdicionarComponent
+    AdicionarComponent,
+    SalarioComponent
   ],
   imports: [
     BrowserModule,

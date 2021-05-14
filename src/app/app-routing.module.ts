@@ -4,7 +4,15 @@ import { ListarComponent } from './listar/listar.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { AdicionarComponent } from './adicionar/adicionar.component';
 
+import { SalarioComponent } from './salario/salario.component';
+
 const routes: Routes = [
+  {
+    path: 'salario',
+    component: SalarioComponent,
+    data: { title: 'Salario' }
+  },
+
   {
     path: 'produtos',
     component: ListarComponent,
@@ -15,11 +23,12 @@ const routes: Routes = [
     component: DetalheComponent,
     data: { title: 'Detalhe do Produto' }
   },
+  
   {
     path: 'produtos/novo',
     component: AdicionarComponent,
-    data: { title: 'Novo do Produto' }
-  },
+    
+  }, 
   {
     path: '',
     redirectTo: '/produtos',
