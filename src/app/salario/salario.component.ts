@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-salario',
@@ -7,20 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalarioComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private formBuilder: FormBuilder) { }
+  salaryForm: FormGroup;
+  salary = 0
   ngOnInit(): void {
+    this.salaryForm = this.formBuilder.group({
+      'salary': [null, Validators.required],
+      
+    });
   }
 
-  calc(salary: number){
-    if(salary > 0 && salary < 280){
-      return salary * 1.2
-    } else if (salary >= 280 && salary < 700){
-      return salary * 1.15
-    } else if (salary >= 700 && salary < 1500){
-      return salary * 1.1
-    } else if (salary >= 1500){
-      return salary * 1.05
+  calc(){
+    this.salary = this.salaryForm.controls['salary'].value
+    if(this.salary > 0 && this.salary < 280){
+      return this.salary * 1.2
+    } else if (this.salary >= 280 && this.salary < 700){
+      return this.salary * 1.15
+    } else if (this.salary >= 700 && this.salary < 1500){
+      return this.salary * 1.1
+    } else if (this.salary >= 1500){
+      return this.salary * 1.05
     }
     
   }

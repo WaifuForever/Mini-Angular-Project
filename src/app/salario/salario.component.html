@@ -1,5 +1,12 @@
 <div id="teste">
-        
+    <form class="example-container" [formGroup]="productForm">
+        <mat-form-field>
+            <input matInput name="nomeProduto" placeholder="Salario" formControlName="salario">
+        </mat-form-field>
+     
+        <button class="add-btn" type="submit" [disabled]="!productForm.valid" mat-raised-button color="primary"
+        (click)="calc()">Calcular</button>
+    </form>
     <table class="table">
         
     </table>
